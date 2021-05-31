@@ -1,0 +1,33 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+<div class="input">
+ <h2 style="text-align:center">New User Creation</h2>
+<table border="10px" class="center">
+  <tr>
+    <td>
+      Emp Id</td><td><input type="text"    value= '1' disabled> 
+    </td>
+  </tr>
+  <tr>
+    <td>
+      FirstName</td><td><input type="text" formControlName="fname" > 
+    </td>
+  </tr>
+  <tr><td> LastName</td><td><input type="text" formControlName="lname" >
+    </td></tr>
+    <tr><td> age</td><td><input type="text" formControlName="age" >
+    </td></tr>
+    <tr><td> MobileNumber</td><td><input type="number" formControlName="number" >
+    </td></tr>
+    <tr><td>Gender</td><td><input type="radio" id="male" formControlName="male" >male</td></tr>
+    <tr><td></td><td><input type="radio" id="female" formControlName="female">female</td>
+    <tr><td><td> <input type="submit"/>
+    </td></tr></table></div></form>
+   <div class="form-group" style="text-align:center">
+      <mat-form-field >
+<mat-label>Select Employee Id</mat-label>
+<mat-select>
+<mat-option   (onSelectionChange)="onSubmit()" *ngFor="let web of weblist" value="fname">{{web.viewValue}}</mat-option>
+
+</mat-select>
+</mat-form-field>
+      </div>
